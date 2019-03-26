@@ -69,6 +69,57 @@
     margin: 10px;
     // border: 2px solid blueviolet;
 }
+.aboutus-header{
+    box-sizing: border-box;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin: 0; padding: 0;
+    width: 100%;
+    height: max-content;
+    // border: 2px solid gold;
+}
+.member-email, .member-git, .member-blog{
+    margin: 0 3px;
+    display: none;
+}
+.aboutus-contact-CheckBox{
+    display: none;
+}
+.aboutus-contact-CheckBox:checked{
+    &+span{
+        display: inherit;
+    }
+}
+.aboutus-contact-CheckBox__label{
+    margin: 0 2px;
+    font-size: 1.1rem;
+    cursor: pointer;
+}
+.aboutus-name{
+    box-sizing: border-box;
+    margin: 0; padding: 0 10px;
+    width: 75px;
+    height: auto;
+    font-weight: bolder;
+    // border: 2px solid red;
+}
+.aboutus-contact{
+    box-sizing: border-box;
+    margin: 0; padding: 0;
+    width: 90%;
+    height: max-content;
+    word-break: break-all;
+    // border: 2px solid blue;
+
+    & ul{
+        margin: 0; padding: 0;
+    }
+    & li{
+        margin: 0; padding: 0;
+        display: inline;
+    }
+}
 .aboutus-tagCt{
     box-sizing: border-box;
     display: flex;
@@ -94,21 +145,12 @@
     background-color: #fffabb;
 }
 
-.aboutus-name{
-    box-sizing: border-box;
-    display: inline-block;
-    margin: 0; padding: 0 10px;
-    width: 100%;
-    height: max-content;
-    font-weight: bolder;
-    // border: 2px solid red;
-}
+
 
 .aboutus-member hr{
     box-sizing: border-box;
     width: 98%;
     margin: 2px 0 10px 0;
-    // border: 0.5px solid fuchsia;
 }
 
 @media only screen and (min-width: 320px) {

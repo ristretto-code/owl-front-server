@@ -6,8 +6,8 @@
     margin: 0; padding: 10px;
     width: 99%;
     height: 95%;
-    border: 1px solid rgb(220, 220, 220);
-    border-bottom: 1.5px solid rgb(190,190,190);
+    border: $component-content-border;
+    box-shadow: $component-content-boxShadow-Deep;
     border-radius: 6px;
     overflow-x: hidden;
     overflow-y: auto;
@@ -25,6 +25,7 @@
     transition: width 1s  ease-out;
     width : 0%;
     margin-left: 0;
+    
 }
 
 .mapper-hr-grow-go{

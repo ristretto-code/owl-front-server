@@ -292,7 +292,7 @@
         opacity: .2;
         animation: noise 1s steps(8,end) infinite both;
         &:hover{
-            opacity: 0.3;
+            opacity: 0.4;
             &~div{
                 color: lightgray;
             }

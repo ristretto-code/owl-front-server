@@ -32,10 +32,8 @@
     overflow-x: hidden;
     overflow-y: auto;
     border-radius: 6px;
-    
 }
 .question-comp-title{
-    
 }
 .question-askbox i{
     font-size: 20px;
@@ -98,7 +96,6 @@
     border: $component-content-border;
     border-radius: 6px;
     background-color: $component-content-Back;
-
 }
 
 .question-reply-wrap{
@@ -109,7 +106,6 @@
     overflow-x: hidden;
     overflow-y: auto;
     border-radius: 6px;
-
 }
 .question-reply-input{
     box-sizing: border-box;
@@ -217,10 +213,11 @@
     background-color: #dae9da;
 }
 
-@media only screen and (min-width: 360px){
+@media only screen and (min-width: 320px){
     .question-askbox{
         width: 90%;
         left: 5%;
+        overflow: auto;
     }
     .question-view{
         width: 100%;
@@ -247,12 +244,14 @@
     }
     .question-view{
         width: 55%;
+        min-height: 500px;
         height: 100%;
         box-shadow: none;
         margin-bottom: 0;
     }
     .question-content-reply-wrap{
         width: 40%;
+        min-height: 500px;
         height: 100%;
     }
     .question-askbox-wrap{

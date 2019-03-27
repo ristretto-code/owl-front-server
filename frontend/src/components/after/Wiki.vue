@@ -119,9 +119,9 @@ export default {
               return
           }
           textData = textData.replace(/\n/g, '<br/>')
-          textData = textData.replace(/\[\[([^|]+?)\]\]/ig, "<b style='color: blue;cursor: pointer;' onclick='localStorage.linkKeyword=`$1`'>$1</b>")
+          textData = textData.replace(/\[\[([^|]+?)\]\]/ig, "<b style='color: skyblue;cursor: pointer;' onclick='localStorage.linkKeyword=`$1`'>$1</b>")
           textData = textData.replace(/\[\[파일:.*?\]\]/ig," ")
-          textData = textData.replace(/\[\[.*?\|(.*?)\]\]/ig, "<b style='color:black'>$1</b>")
+          textData = textData.replace(/\[\[.*?\|(.*?)\]\]/ig, "<b style='color:gray'>$1</b>")
           textData = textData.replace(/\(\{\{(.*?)\}\}\)/ig, " ")
           textData = textData.replace(/<ref(.*?)<\/ref>/ig, " ")
           textData = textData.replace(/\{\{(.*?)\}\}/ig, "<b>$1</b>")

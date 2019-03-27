@@ -15,36 +15,35 @@
                                     <span class="aboutus-name">{{member.name}}</span>
                                     <div class="aboutus-contact">
                                         <ul>
-                                            <li v-if="member.email != null" @click="copy">
+                                            <li class="aboutus-contact-email" v-if="member.email != null" @click="copy">
                                                 <label for="emailCheckBox1" class="aboutus-contact-CheckBox__label" v-if="member.name === '강수정'"><i class="far fa-envelope"></i></label>
-                                                <input type="checkbox" id="emailCheckBox1" class="aboutus-contact-CheckBox" name="aboutus-contact-emailCheckBox" v-if="member.name === '강수정'">
+                                                <input type="checkbox" id="emailCheckBox1" class="aboutus-contact-CheckBox" name="aboutus-contact-CheckBox" v-if="member.name === '강수정'">
                                                 <label for="emailCheckBox2" class="aboutus-contact-CheckBox__label" v-if="member.name === '권용재'"><i class="far fa-envelope"></i></label>
-                                                <input type="checkbox" id="emailCheckBox2" class="aboutus-contact-CheckBox" name="aboutus-contact-emailCheckBox" v-if="member.name === '권용재'">
+                                                <input type="checkbox" id="emailCheckBox2" class="aboutus-contact-CheckBox" name="aboutus-contact-CheckBox" v-if="member.name === '권용재'">
                                                 <label for="emailCheckBox3" class="aboutus-contact-CheckBox__label" v-if="member.name === '이양헌'"><i class="far fa-envelope"></i></label>
-                                                <input type="checkbox" id="emailCheckBox3" class="aboutus-contact-CheckBox" name="aboutus-contact-emailCheckBox" v-if="member.name === '이양헌'">
+                                                <input type="checkbox" id="emailCheckBox3" class="aboutus-contact-CheckBox" name="aboutus-contact-CheckBox" v-if="member.name === '이양헌'">
                                                 <label for="emailCheckBox4" class="aboutus-contact-CheckBox__label" v-if="member.name === '최철웅'"><i class="far fa-envelope"></i></label>
-                                                <input type="checkbox" id="emailCheckBox4" class="aboutus-contact-CheckBox" name="aboutus-contact-emailCheckBox" v-if="member.name === '최철웅'">
+                                                <input type="checkbox" id="emailCheckBox4" class="aboutus-contact-CheckBox" name="aboutus-contact-CheckBox" v-if="member.name === '최철웅'">
                                                 <span class="member-email">{{member.email}}</span>
                                                 <i style="color:red;font-size:9px;display:none"> copied!</i>
                                             </li>
                                             <li v-if="member.github != null" @click="go(member.github)">
                                                 <label for="gitCheckBox1" class="aboutus-contact-CheckBox__label" v-if="member.name === '강수정'"><i class="fab fa-github"></i></label>
-                                                <input type="checkbox" id="gitCheckBox1" class="aboutus-contact-CheckBox" name="aboutus-contact-emailCheckBox" v-if="member.name === '강수정'">
+                                                <input type="checkbox" id="gitCheckBox1" class="aboutus-contact-CheckBox" name="aboutus-contact-CheckBox" v-if="member.name === '강수정'">
                                                 <label for="gitCheckBox2" class="aboutus-contact-CheckBox__label" v-if="member.name === '권용재'"><i class="fab fa-github"></i></label>
-                                                <input type="checkbox" id="gitCheckBox2" class="aboutus-contact-CheckBox" name="aboutus-contact-emailCheckBox" v-if="member.name === '권용재'">
+                                                <input type="checkbox" id="gitCheckBox2" class="aboutus-contact-CheckBox" name="aboutus-contact-CheckBox" v-if="member.name === '권용재'">
                                                 <label for="gitCheckBox3" class="aboutus-contact-CheckBox__label" v-if="member.name === '이양헌'"><i class="fab fa-github"></i></label>
-                                                <input type="checkbox" id="gitCheckBox3" class="aboutus-contact-CheckBox" name="aboutus-contact-emailCheckBox" v-if="member.name === '이양헌'">
+                                                <input type="checkbox" id="gitCheckBox3" class="aboutus-contact-CheckBox" name="aboutus-contact-CheckBox" v-if="member.name === '이양헌'">
                                                 <label for="gitCheckBox4" class="aboutus-contact-CheckBox__label" v-if="member.name === '최철웅'"><i class="fab fa-github"></i></label>
-                                                <input type="checkbox" id="gitCheckBox4" class="aboutus-contact-CheckBox" name="aboutus-contact-emailCheckBox" v-if="member.name === '최철웅'">
+                                                <input type="checkbox" id="gitCheckBox4" class="aboutus-contact-CheckBox" name="aboutus-contact-CheckBox" v-if="member.name === '최철웅'">
                                                 <span class="member-git">{{member.github}}</span>
                                             </li>
                                             <li v-if="member.blog != null" @click="go(member.blog)">
                                                 <label for="blogCheckBox1" class="aboutus-contact-CheckBox__label" v-if="member.name === '이양헌'"><i class="fas fa-blog"></i></label>
-                                                <input type="checkbox" id="blogCheckBox1" class="aboutus-contact-CheckBox" name="aboutus-contact-emailCheckBox" v-if="member.name === '이양헌'">
+                                                <input type="checkbox" id="blogCheckBox1" class="aboutus-contact-CheckBox" name="aboutus-contact-CheckBox" v-if="member.name === '이양헌'">
                                                 <span class="member-blog">{{member.blog}}</span>
                                             </li>
                                         </ul>
-                                        <input type="hidden" class="contact-hidden" v-model="mail">
                                     </div>
                                 </div>
                                 <hr>
@@ -58,7 +57,7 @@
                         </div>
                     </div>
             </div>
-        </div>
+    </div>
 </template>
 
 <script>
@@ -79,16 +78,21 @@ export default {
             window.open(link, '_blank')
         },
         copy(e){
-            // this.mail = e.target.innerText.split('copied!')[0].trim()
-            // setTimeout(() => {
-            //     document.querySelector('.contact-hidden').select()
-            //     document.execCommand('copy')
-            //     e.target.lastElementChild.style.display = "inline"
-            //     setTimeout(() => {
-            //         e.target.lastElementChild.style.display = "none"
-            //     }, 300)
-            // }, 1)
-        }
+            this.mail = e.target.innerText.split('copied!')[0].trim()
+            setTimeout(() => {
+                const tempInput = document.createElement("input")
+                tempInput.style = "position: absolute; left: -1000px; top: -1000px"
+                tempInput.value = e.target.innerText.split('copied!')[0].trim()
+                document.body.appendChild(tempInput)
+                tempInput.select()
+                document.execCommand("copy")
+                document.body.removeChild(tempInput)
+                e.target.lastElementChild.style.display = "inline"
+                setTimeout(() => {
+                    e.target.lastElementChild.style.display = "none"
+                }, 300)
+            }, 1)
+        },
     },
     computed: {
         members_random(){

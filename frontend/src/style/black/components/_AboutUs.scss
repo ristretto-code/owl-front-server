@@ -12,7 +12,6 @@
     overflow-x: hidden;
     overflow-y: auto;
     background-color: $component-content-Back;
-    // border: 2px solid green;
     & hr{
         border: $component-content-border;
     }
@@ -23,7 +22,6 @@
     justify-content: flex-start;
     align-items: flex-start;
     width: auto; height: max-content;
-    // border: 2px solid red;
 }
 .aboutus-member{
     box-sizing: border-box;
@@ -39,7 +37,6 @@
     border: $component-content-border;
     box-shadow: $component-content-boxShadow;
     border-radius: 10px;
-    // border: 2px solid gold;
 }
 
 .aboutus-member img{
@@ -50,7 +47,6 @@
     border-radius: 60px;
     object-fit: cover;
     opacity: 0.9;
-    // border: 2px solid orangered;
 }
 
 .aboutus-vr{
@@ -58,7 +54,6 @@
     border-left: 1px solid #aaa;
     height: 120px;
     margin: 0 10px;
-    // border: 2px solid greenyellow;
 }
 
 .aboutus-member-info{
@@ -81,7 +76,6 @@
     width: 100%;
     height: max-content;
     color: $font-basic;
-    // border: 2px solid gold;
 }
 .member-email, .member-git, .member-blog{
     margin: 0 3px;
@@ -93,6 +87,7 @@
 .aboutus-contact-CheckBox:checked{
     &+span{
         display: inherit;
+        pointer-events: none;
     }
 }
 .aboutus-contact-CheckBox__label{
@@ -106,7 +101,6 @@
     width: 75px;
     height: auto;
     font-weight: bolder;
-    // border: 2px solid red;
 }
 .aboutus-contact{
     box-sizing: border-box;
@@ -114,7 +108,6 @@
     width: 90%;
     height: max-content;
     word-break: break-all;
-    // border: 2px solid blue;
 
     & ul{
         margin: 0; padding: 0;
@@ -133,7 +126,6 @@
     margin: 0; padding: 0;
     width: 100%;
     height: 65%;
-    // border: 2px solid blue;
 }
 .aboutus-tag{
     box-sizing: border-box;
@@ -142,7 +134,6 @@
     margin: 0 10px;
     padding: 5px 10px;
     border-radius: 10px;
-    // border: 2px solid skyblue;
 }
 
 .aboutus-say{
@@ -155,7 +146,6 @@
     box-sizing: border-box;
     width: 98%;
     margin: 2px 0 10px 0;
-    // border: 0.5px solid fuchsia;
 }
 
 @media only screen and (min-width: 320px) {

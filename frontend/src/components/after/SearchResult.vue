@@ -63,13 +63,13 @@ export default {
         setESData(){
             const mQuery = [                            
                 {"index":"data_google"},
-                {"query":{"prefix":{"title": this.searchText}},"from":0,"size":5},
+                {"query":{"match":{"title": this.searchText}},"from":0,"size":2},
                 {"index":"data_naver"},
-                {"query":{"prefix":{"title": this.searchText}},"from":0,"size":5},
+                {"query":{"match":{"title": this.searchText}},"from":0,"size":2},
                 {"index":"search_data"},
-                {"query":{"prefix":{"title": this.searchText}},"from":0,"size":5},
+                {"query":{"match":{"title": this.searchText}},"from":0,"size":2},
                 {"index":"crawling_metadata"},
-                {"query":{"prefix":{"title": this.searchText}},"from":0,"size":5}
+                {"query":{"match":{"title": this.searchText}},"from":0,"size":20}
                 ]
             this.$ES.msearch({ body: mQuery })
             .then(res => {
@@ -83,8 +83,13 @@ export default {
                 if(res.responses[3].hits.total != 0)
                     datas.push(res.responses[3].hits.hits)
                 for(let i of datas)
-                    for(let j of i)
+                    for(let j of i){
+                        j._source.title.split(this.searchText).join('<b>'+this.searchText+'</b>')
+                        j._source.snippet.split(this.searchText).join('<b>'+this.searchText+'</b>')
+                        if(j._source.snippet.length>50)
+                            j._source.snippet = j._source.snippet.substr(0, 50) + ' ...'
                         this.combination.push({title: `<a href="${j._source.link}" style="color:inherit;" target="_blank">${j._source.title}</a>`, link: j._source.link, description: j._source.snippet, source: 'l'})
+                    }
             })
         }, 
         setCombination(res, div){
@@ -116,24 +121,38 @@ export default {
             this.sortCombination()
         },
         sortCombination(){
-            let local = []
-            let google = []
-            let nblog = []
-            let ncafe = []
-            for(let i of this.combination){
-                if(i.source == 'l') local.push(i)
-                if(i.source == 'g') google.push(i)
-                if(i.source == 'nb') nblog.push(i)
-                if(i.source == 'nc') ncafe.push(i)
-            }
-            let max = local.length > nblog.length ? local.length : nblog.length
             let newCombination = []
-            for(let i=0;i<max;i++){
-                if(local[i]) newCombination.push(local[i])
-                if(google[i]) newCombination.push(google[i])
-                if(nblog[i]) newCombination.push(nblog[i])
-                if(ncafe[i]) newCombination.push(ncafe[i])
+            let comb = [[],[],[],[]]
+            for(let i of this.combination){
+                if(i.source == 'l') comb[0].push(i)
+                if(i.source == 'g') comb[1].push(i)
+                if(i.source == 'nb') comb[2].push(i)
+                if(i.source == 'nc') comb[3].push(i)
             }
+            let sort = []
+            let change = []
+            for(let i in comb[0]){
+                const tmp = comb[0][i].title.replace(/(<([^>]+)>)/ig,"");
+                if(sort.indexOf(tmp) == -1){
+                    sort.push(tmp)
+                    change.push(comb[0][i])
+                }
+            }
+            comb[0] = change
+            for (let i=0;i<30;i++){
+                if(comb[0][0] && comb[0][0]!="") 
+                    newCombination.push(comb[0].splice(0, 1)[0])
+                let ran = Math.floor(Math.random()*4)
+                if(comb[ran][0]) 
+                    newCombination.push(comb[ran].splice(0, 1)[0])
+            }
+            // let max = local.length > nblog.length ? local.length : nblog.length
+            // for(let i=0;i<max;i++){
+            //     if(local[i]) newCombination.push(local[i])
+            //     if(google[i]) newCombination.push(google[i])
+            //     if(nblog[i]) newCombination.push(nblog[i])
+            //     if(ncafe[i]) newCombination.push(ncafe[i])
+            // }
             this.combination = newCombination
         },
         logComp(link, title){

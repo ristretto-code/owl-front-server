@@ -179,7 +179,7 @@ export default{
             this.$EventBus.$emit('showSignIn');
         },
         logoutAction(){
-            store.dispatch('LOGOUT').then(console.log('로그아웃 완료'))
+            store.dispatch('LOGOUT').then(alert('로그아웃 완료'))
         },
         isKorean(keyword){
             return /[ㄱ-ㅎ|ㅏ-ㅣ|가-힣]/.test(keyword)

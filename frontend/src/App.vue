@@ -51,7 +51,6 @@ export default {
   created(){
     this.getAPIs()
     this.setState()
-    console.log(this.$store.state)
     this.$EventBus.$on('goBeforePage', this.goBeforePage)
     this.$EventBus.$on('goAfterPage', this.goAfterPage)
     this.$EventBus.$on('goLoadingPage', this.goLoadingPage)
@@ -90,11 +89,9 @@ export default {
   methods: {
     setState(){
       const token = this.getToken()
-      console.log(token)
       this.backImg = localStorage.getItem("theme") != null ? localStorage.getItem("theme") : this.backImg
       if(token){
         this.$http.get(`http://52.79.204.244/member?email=${token.email}`).then(res => {
-          console.log(res.data)
           this.$store.dispatch('SETMEMBER', res.data)
           this.setCustomKeywords(res.data.email)
           this.setSearchHistory(res.data.email)

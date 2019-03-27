@@ -13,11 +13,6 @@ export default new Router({
       path: '/',
       name: 'IndexPage',
       component: Index,
-    },
-    {
-      path: '/after',
-      name: 'IndexPage',
-      component: Index,
-    },
+    }
   ]
 })

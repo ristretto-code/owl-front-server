@@ -101,7 +101,6 @@ export default {
         }
         },
         sendReply(unsolvedQuestion){
-            console.log(this.$store.state)
             if(this.$store.state.mem_idx != null){
                 this.$http({
                     method:'post',

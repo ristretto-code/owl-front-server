@@ -51,7 +51,6 @@
    padding: 1px;
    border-radius: 5px;
    cursor: pointer;
-
 }
 
 .official-li:hover{
@@ -70,13 +69,62 @@
 }
 
 .review-ul{
+    box-sizing: border-box;
     margin: 0; padding:0;
     width: 100%;
     height: max-content;
     overflow-y: auto;
-
 }
 
+.review-li{
+    list-style: none;
+    box-sizing: border-box;
+    padding: 0.5em;
+    background-color: $component-content-Back;
+    margin: 0.2em;
+    border-radius: 6px;
+    font-size: 0.9em;
+    overflow: hidden;
+ }
+ 
+ .review-writer{
+    display: inline-block;
+    padding: 2px;
+    background-color: $component-content-SubLight;
+    border-radius: 10px;
+ }
+ 
+ .review-sub{
+    float: right;
+    color: $font-basic;
+ }
+ 
+ .review-content{
+    box-sizing: border-box;
+    display: inline-block;
+    margin: 2px; margin-top: 5px;
+    padding: 2px;
+    width: 100%;
+    height: auto;
+    min-height: max-content;
+    word-break: break-all;
+    clear: both;
+ }
+ 
+ .review-none{
+    display: block;
+    clear: both;
+    width: 100%;
+    margin: 2px;
+    padding: 1em 0;
+    text-align: center;
+ }
+ 
+ .review-keyword{
+    color: $font-basic;
+    font-weight: bold;
+    cursor: pointer;
+ }
 .review-title{
     float: left;
 
@@ -145,64 +193,4 @@
     padding: 6px 2px;
     color: $font-basic;
     cursor: pointer;
-
-
 }
-
-.review-li{
-   list-style: none;
-   box-sizing: border-box;
-   padding: 0.5em;
-   background-color: $component-content-Back;
-   margin: 0.2em;
-   border-radius: 6px;
-   font-size: 0.9em;
-
-}
-
-.review-writer{
-   display: inline-block;
-   padding: 2px;
-   background-color: $component-content-Sub;
-   border-radius: 10px;
-}
-
-.review-sub{
-   float: right;
-   color: $font-basic;
-}
-
-.review-content{
-   display: inline-block;
-   clear: both;
-   width: 100%;
-   margin: 2px;
-   padding: 2px;
-}
-
-.review-none{
-   display: block;
-   clear: both;
-   width: 100%;
-   margin: 2px;
-   padding: 1em 0;
-   text-align: center;
-}
-
-.review-keyword{
-   color: $font-basic;
-   font-weight: bold;
-   cursor: pointer;
-}
-
-// .fade-enter-active { 
-//  transition: all .3s ease;
-// }
-// .fade-leave-active {
-//  transition: all .3s cubic-bezier(0.8, 1.0, 1.0, 0.5);
-// }
-// .fade-enter, .fade-leave-to
-// /* .fade-leave-active below version 2.1.8 */ {
-//  transform: translateY(-10px);
-//  opacity: 0;
-// }

@@ -1,15 +1,17 @@
 @import '../utils/variables';
 
 .skills-wrap{
-    background-color: $component-content-Back;
-    margin: 1em auto;
-    padding: 1em;
-    width: 95%;
-    height: 90%;
+    box-sizing: border-box;
+    position: relative;
+    margin: 0; padding: 10px;
+    width: 99%;
+    height: 95%;
     border: $component-content-border;
     box-shadow: $component-content-boxShadow-Deep;
     border-radius: 6px;
-    
+    overflow-x: hidden;
+    overflow-y: auto;
+    background-color: $component-content-Back;
     & hr{
         border: $component-content-border;
     }
@@ -23,7 +25,7 @@
     margin: 0;
     padding: 1em 0;
     width: 100%;
-    height: max-content;
+    height: 100%;
 }
 
 .skills-circle{
@@ -48,6 +50,7 @@
 }
 
 .skills-box img{
+    color: $font-white;
     width: 40px;
     height: 40px;
 }
@@ -63,8 +66,8 @@
     padding: 0.5em;
     border-radius: 5px;
     font-size: 0.7em;
-    color: $font-white;
-    font-weight: 700;
+    color: $font-title;
+    font-weight: 500;
     opacity: 0.8;
     word-wrap: break-word;
 }
@@ -79,6 +82,5 @@
     border-radius: 6px;
     box-shadow: $component-content-boxShadow;
     background-color: $component-content-SubLight;
-    // opacity: 0.7;
-    color: $font-basic;
+    color: $font-white;
 }

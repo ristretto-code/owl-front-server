@@ -70,7 +70,7 @@
 }
 
 .signBtnCt{ /*로그인버튼 컨테이너에 추후 다른 버튼이 추가될 수 있으므로 fixed*/
-    position: fixed;
+    position: absolute;
     text-align: center;
     align-content: center;
     bottom: -15px;

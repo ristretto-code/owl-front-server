@@ -4,9 +4,9 @@
             <div class="notice-tab">
                 <ul>
                     <li :class="{'notice-tab-clicked' : tab_main}" @click="clickTab(1)">OWL</li>
-                    <li :class="{'notice-tab-clicked' : tab_aboutUs}" @click="clickTab(2)">ABOUT US</li>
                     <li :class="{'notice-tab-clicked' : tab_skills}" @click="clickTab(3)">SKILLS</li>
-                    <li :class="{'notice-tab-clicked' : tab_contact}" @click="clickTab(4)">CONTACT</li>
+                    <li :class="{'notice-tab-clicked' : tab_contact}" @click="clickTab(4)">ABOUT US</li>
+                    <li :class="{'notice-tab-clicked' : tab_aboutUs}" @click="clickTab(2)">CREDITS</li>
                 </ul>
             </div>
         </div>
@@ -19,10 +19,15 @@
                     PORTFOLIO
                 </span>
             </div>
-            <div class="notice-aboutus" v-if="tab_aboutUs" @click="$EventBus.$emit('showPortfolio', 1)">
-                <div class="notice-team">
-                    <span class="notice-span">TEAM SPIDER</span>
-                </div>
+            <div class="notice-aboutus" v-if="tab_aboutUs" @click="$EventBus.$emit('showPortfolio', 3)">
+                    <div class="notice-credits-main">
+                        <div class="notice-credits-wrap">
+                            <div class="notice-credits-noise-wrap">
+                                <div class="notice-credits-noise"></div>
+                                <div class="notice-credits-title">CREDITS</div>
+                            </div>
+                        </div>
+                    </div>
             </div>
             <div class="notice-skills" v-if="tab_skills" @click="$EventBus.$emit('showPortfolio', 2)">
                 <div class="notice-contents">
@@ -36,7 +41,7 @@
                     </div>
                 </div>
             </div>
-            <div class="notice-contact notice-contents" v-if="tab_contact" @click="$EventBus.$emit('showPortfolio', 3)">
+            <div class="notice-contact notice-contents" v-if="tab_contact" @click="$EventBus.$emit('showPortfolio', 1)">
                 <div class="notice-1 notice-box">
                     <img v-bind:src="img_kang" alt="kang">
                     <span class="notice-boxtitle">강수정</span>
@@ -76,7 +81,7 @@ export default {
             'https://mcgivrer.files.wordpress.com/2016/02/spring-boot-project-logo.png?w=300',
             'http://linux.systemv.pe.kr/wp-content/uploads/2016/06/mongodb.png',
             'https://vuejs.org/images/logo.png',
-            'https://png2.kisspng.com/sh/f837ea4c0bd079bcd02057bc9be3eff5/L0KzQYm3VMI2N5d1j5H0aYP2gLBuTf5wbJYyguU2anH5ccTqkvlxfF58fdQ2YYDzfLrqggRqd58yfep5cnX2g37xk71kd551RadqZUDpSIXsVfU4PWQ8RqI9NkS8RIaBUcUzPGcAS6ICMEO7Roq1kP5o/kisspng-node-js-javascript-web-application-express-js-comp-5ae0f84e5e7537.0464945815246930703869.png',
+            'https://t1.daumcdn.net/cfile/tistory/9983CC475C9B21AD0E',
             'https://t1.daumcdn.net/cfile/tistory/99FB99345C91D6342D']
         }
     },

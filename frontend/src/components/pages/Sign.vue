@@ -1,7 +1,7 @@
 <template>
     <div>
                 <!-- 모달   -->
-        <div id="modal" v-if="showModal" v-on:click="allPopupDown"></div>
+        <div class="modal" v-if="showModal" v-on:click="allPopupDown"></div>
                 <!-- 회원가입, 로그인 -->
         <div>
             <SignIn v-if="showSignIn"/>

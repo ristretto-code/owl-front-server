@@ -1,7 +1,6 @@
 @import '../utils/variables';
 
 .others{
-    // margin: 0; padding: 0;
     background-color: $component-content-Back;
 }
 
@@ -88,7 +87,6 @@
     list-style-type: none;
     overflow: hidden;
     margin: 3% 0.5em;
-    // border: 1px solid red;
 }
 
 .others li:hover{
@@ -106,79 +104,6 @@
     margin: 3px;
     color: green;
 }
-
-// .others-right{ //others의 google api 검색결과
-//     box-sizing: border-box;
-//     margin-top: 10px;
-//     border-left: 10px solid transparent;
-//     border-right: 10px solid transparent;
-//     padding: 0;
-//     width: 50%;
-//     float: left;
-    
-//     // border: 1px solid red;
-//     // others-right안에 있는 div들은 google api 사이트에서 css를 1차적으로 관리된다..
-//     // 구글 검색결과는  {.gsc-control-cse-ko , .gsc-control-cse} class를 가진다..
-    
-    
-//     .gsc-control-cse, .gsc-control-cse-ko{
-//         overflow: hidden;
-//         padding: 0;
-//         background-color: $component-content-Back;
-//         border: none;
-//         & *{
-//             color: $font-basic;
-//             font-size: 0.8rem;
-//         }
-//         & .gs-title{
-//             font-size: 16px !important;
-//         }
-//     }
-
-//     .gsc-webResult, .gsc-result{
-//         background-color: $component-content-Back !important;
-//         border: none !important;
-//     }
-//     .gs-webResult, .gs-result{
-//         &:hover{
-//             opacity: 0.8;
-//         }
-//     }
-
-//     .gsc-above-wrapper-area{
-//     }
-//     .gsc-tabsArea{
-//         margin: 0;
-//     }
-//         .gsc-tabHeader{
-//         color: $font-basicLight;
-//         font-size: 12px;
-//     }
-//     .gsc-orderby-label{
-//         font-size: 11px;
-//     }
-//     .gsc-selected-option-container{
-//         margin: 5px 5px;
-//         height: 28px;
-//         line-height: 28px;
-//         & *{
-//             color: $font-Dark;
-//             font-size: 11px;
-//         }
-
-//     }
-//     .gsc-cursor-page {
-//         background-color: $component-content-Back !important;
-//         color: $font-basic !important;
-//     }
-//     .gsc-cursor-current-page {
-//         font-weight: 700;
-//         font-size: 1rem;
-//         color: $button-base !important;
-//     }
-
-
-// }
 
 .others-subpost{
     font-size: 0.9em;

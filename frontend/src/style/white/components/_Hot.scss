@@ -1,10 +1,13 @@
 @import '../utils/variables';
 
 .hot{
-    overflow: auto;
 }
 
 .hot-wrap{
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    overflow-y: scroll;
 }
 
 .hot-board{
@@ -25,7 +28,6 @@
     font-size: 0.8em;
     overflow: hidden;
     border: $component-content-border;
-
 
     &:hover{
         background: linear-gradient(to top, $component-content-SubLight, white); 
@@ -133,7 +135,9 @@
     overflow: hidden;
     border: $component-content-border;
 }
-
+.apexcharts-toolbar{
+    z-index: inherit;
+}
 .apexcharts-grid{
 }
 .apexcharts-svg{

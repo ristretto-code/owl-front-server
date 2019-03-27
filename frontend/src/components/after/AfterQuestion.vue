@@ -1,5 +1,5 @@
 <template>
-    <div class = "sorted" v-if="ready">
+    <div class="sorted" v-if="ready">
         <div class="compHead">
             QUESTION
         </div>

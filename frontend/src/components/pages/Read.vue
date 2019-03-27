@@ -1,7 +1,7 @@
 <template>
     <div>
                 <!-- 모달   -->
-        <div id="modal" v-if="showModal" v-on:click="closeRead"></div>
+        <div class="modal" v-if="showModal" v-on:click="closeRead"></div>
 
                 <!-- 질문, 수정 + 글쓰기 -->
         <div>
@@ -59,15 +59,3 @@ export default {
    },
 }
 </script>
-
-<style>
-#modal{
-  position: fixed;
-  display: block;
-  width:100%;
-  height:100vh;
-  top:0;
-  left:0;
-  background-color: rgba(0,0,0,0.7);
-}
-</style>

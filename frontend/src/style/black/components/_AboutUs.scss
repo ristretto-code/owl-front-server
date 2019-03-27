@@ -67,7 +67,7 @@
     justify-content: flex-start;
     align-items: center;
     flex-flow: column;
-    width: 80%;
+    width: 100%;
     height: 80%;
     margin: 10px;
     color: $font-Dark;
@@ -172,6 +172,24 @@
     .aboutus-member-info{
         height: max-content;
     }
+    .aboutus-header{
+        justify-content: center;
+        align-items: center;
+        flex-flow: wrap;
+        margin: 0; padding: 0;
+        min-height: max-content;
+        text-align: center;
+    }
+    .aboutus-contact{
+        width: 95%;
+        height: max-content;
+    }
+    .member-email, .member-git, .member-blog{
+        font-size: 0.8rem
+    }
+    .aboutus-contact-CheckBox__label{
+        font-size: 1rem;
+    }
     .aboutus-tagCt{
         justify-content: center;
         height: max-content;
@@ -209,6 +227,18 @@
     }
     .aboutus-member-info{
         height: 80%;
+    }
+    .aboutus-header{
+        justify-content: flex-start;
+        align-items: center;
+        flex-flow: nowrap;
+        margin: 0; padding: 0;
+        height: max-content;
+        text-align: initial;
+    }
+    .aboutus-contact{
+        width: 90%;
+        height: max-content;
     }
     .aboutus-tagCt{
         justify-content: flex-start;

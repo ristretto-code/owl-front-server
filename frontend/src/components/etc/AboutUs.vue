@@ -44,6 +44,7 @@
                                                 <span class="member-blog">{{member.blog}}</span>
                                             </li>
                                         </ul>
+                                        <input type="hidden" class="contact-hidden" v-model="mail">
                                     </div>
                                 </div>
                                 <hr>
@@ -78,14 +79,15 @@ export default {
             window.open(link, '_blank')
         },
         copy(e){
-            setTimeout(() => {
-                document.querySelector('.contact-hidden').select()
-                document.execCommand('copy')
-                e.target.lastElementChild.style.display = "inline"
-                setTimeout(() => {
-                    e.target.lastElementChild.style.display = "none"
-                }, 300)
-            }, 1)
+            // this.mail = e.target.innerText.split('copied!')[0].trim()
+            // setTimeout(() => {
+            //     document.querySelector('.contact-hidden').select()
+            //     document.execCommand('copy')
+            //     e.target.lastElementChild.style.display = "inline"
+            //     setTimeout(() => {
+            //         e.target.lastElementChild.style.display = "none"
+            //     }, 300)
+            // }, 1)
         }
     },
     computed: {

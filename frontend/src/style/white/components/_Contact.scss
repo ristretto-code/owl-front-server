@@ -13,36 +13,3 @@
     overflow-y: auto;
     background-color: $component-content-Back;
 }
-
-.contact-member{
-    box-sizing: border-box;
-    float: left;
-    width: 236px;
-    overflow: hidden;
-    margin: 1em .5em;
-    border: 1px solid rgb(220, 220, 220);
-    border-bottom: 1.5px solid rgb(190,190,190);
-    padding: 10px;
-    border-radius: 10px;
-    border: 2px solid red;
-}
-
-.contact-member span{
-    display: block;
-    width: 100%;
-    text-align: center;
-}
-
-.contact-member li{
-    font-size: 0.7em;
-    margin: 10px 0;
-    cursor: pointer;
-}
-
-.contact-credits{
-    clear: both;
-}
-
-.contact-hidden{
-    margin-top: 1000px;
-}

@@ -4,9 +4,9 @@
             <div class="notice-tab">
                 <ul>
                     <li :class="{'notice-tab-clicked' : tab_main}" @click="clickTab(1)">OWL</li>
-                    <li :class="{'notice-tab-clicked' : tab_aboutUs}" @click="clickTab(2)">ABOUT US</li>
                     <li :class="{'notice-tab-clicked' : tab_skills}" @click="clickTab(3)">SKILLS</li>
-                    <li :class="{'notice-tab-clicked' : tab_contact}" @click="clickTab(4)">CONTACT</li>
+                    <li :class="{'notice-tab-clicked' : tab_contact}" @click="clickTab(4)">ABOUT US</li>
+                    <li :class="{'notice-tab-clicked' : tab_aboutUs}" @click="clickTab(2)">CREDITS</li>
                 </ul>
             </div>
         </div>
@@ -19,10 +19,15 @@
                     PORTFOLIO
                 </span>
             </div>
-            <div class="notice-aboutus" v-if="tab_aboutUs" @click="$EventBus.$emit('showPortfolio', 1)">
-                <div class="notice-team">
-                    <span class="notice-span">TEAM SPIDER</span>
-                </div>
+            <div class="notice-aboutus" v-if="tab_aboutUs" @click="$EventBus.$emit('showPortfolio', 3)">
+                    <div class="notice-credits-main">
+                        <div class="notice-credits-wrap">
+                            <div class="notice-credits-noise-wrap">
+                                <div class="notice-credits-noise"></div>
+                                <div class="notice-credits-title">CREDITS</div>
+                            </div>
+                        </div>
+                    </div>
             </div>
             <div class="notice-skills" v-if="tab_skills" @click="$EventBus.$emit('showPortfolio', 2)">
                 <div class="notice-contents">
@@ -36,7 +41,7 @@
                     </div>
                 </div>
             </div>
-            <div class="notice-contact notice-contents" v-if="tab_contact" @click="$EventBus.$emit('showPortfolio', 3)">
+            <div class="notice-contact notice-contents" v-if="tab_contact" @click="$EventBus.$emit('showPortfolio', 1)">
                 <div class="notice-1 notice-box">
                     <img v-bind:src="img_kang" alt="kang">
                     <span class="notice-boxtitle">강수정</span>

@@ -48,7 +48,8 @@ export default {
     },
     updated(){
         document.querySelectorAll('div.official-wiki b').forEach(el => { 
-            if(el.style.cursor == 'pointer') el.onclick = this.changeKeyword
+            if(el.style.cursor == 'pointer' && el.innerText.length<20 && el.innerHTML.indexOf('<b>') == -1) 
+                el.onclick = this.changeKeyword
         })
     },
     data(){
@@ -112,7 +113,6 @@ export default {
             else this.setWikiData(this.wikiarr[++this.wikipos])
         },
         setWikiData(keyword){
-
             this.$http.get(`http://52.79.204.244/search/review/${this.keyword}/0`).then(res => {
                 this.reviews = res.data.content
                 this.reviewPage = res.data;
@@ -138,7 +138,9 @@ export default {
                 this.setWikiData(this.keyword)
                 return
             }
-            console.log(textData)
+            if(textData.length < 40){
+                textData = '<b>'+this.keyword + '</b>에 관한 데이터를 준비 중입니다.'
+            } else {
             textData = textData.replace(/\n/g, '<br/>')
             textData = textData.replace(/\[\[([^|]+?)\]\]/ig, "<b style='color: blue;cursor: pointer;>$1</b>")
             textData = textData.replace(/\[\[파일:.*?\]\]/ig," ")
@@ -151,6 +153,7 @@ export default {
             textData = textData.replace(/\|/ig,"- ")
             textData = textData.replace(/\b(?:https?):\/\/[a-z0-9-+&@#\/%?=~_|!:,.;]*/ig, "<a href=$& target='_blank'>$&</a>")
             textData = textData.replace(/'''(.*?)'''/ig, "<b>$1</b>")
+            }
             this.wiki = textData
             this.ready = true
             this.reload = 0
@@ -180,10 +183,7 @@ export default {
             }
             localStorage.linkKeyword = this.keyword
             this.$store.dispatch('SET_MAIN_KEYWORD', {mainKeyword: this.keyword})
-        }
+        },
     }
 }
 </script>
-
-<style lang="">
-</style>

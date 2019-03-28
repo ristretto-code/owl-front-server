@@ -133,8 +133,10 @@ export default{
             this.$EventBus.$emit('goLoadingPage')
         },
         clear(){
+            if(!this.searchText||this.searchText=='') return
         },
         checkKeyword(){
+            if(this.searchText.length<1) return
             const lastKeyword = this.searchText.substr(this.searchText.lastIndexOf(' ')+1)
             if(this.searchText==""||lastKeyword=="") {
                 return

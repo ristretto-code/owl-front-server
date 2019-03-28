@@ -4,8 +4,9 @@
         <div class="official-wrap">
             <!-- 위키 데이터 출력 -->
             <div class="official-wiki">
-                <div class="official-move">
+                <div class="official-move" style="text-align:center;">
                     <i class="fas fa-arrow-left" style="float:left;cursor:pointer" v-if="wikipos > 0" @click="move(-1)"></i>
+                    <i style="font-weight:900;"> {{keyword}}</i>
                     <i class="fas fa-arrow-right" style="float:right;cursor:pointer" v-if="wikiarr.length - 1 > wikipos && wikiarr.length > 1" @click="move(1)"></i>
                 </div>
                 <p v-html="wiki"></p>
@@ -137,6 +138,7 @@ export default {
                 this.setWikiData(this.keyword)
                 return
             }
+            console.log(textData)
             textData = textData.replace(/\n/g, '<br/>')
             textData = textData.replace(/\[\[([^|]+?)\]\]/ig, "<b style='color: blue;cursor: pointer;>$1</b>")
             textData = textData.replace(/\[\[파일:.*?\]\]/ig," ")
@@ -182,3 +184,6 @@ export default {
     }
 }
 </script>
+
+<style lang="">
+</style>

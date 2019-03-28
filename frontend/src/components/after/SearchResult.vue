@@ -57,7 +57,6 @@ export default {
             })
             setTimeout(this.setGoogleApi, 1);
             setTimeout(this.setGoogleApiData, 1000)     
-            this.ready = true
         })
         },
         setESData(){
@@ -146,14 +145,8 @@ export default {
                 if(comb[ran][0]) 
                     newCombination.push(comb[ran].splice(0, 1)[0])
             }
-            // let max = local.length > nblog.length ? local.length : nblog.length
-            // for(let i=0;i<max;i++){
-            //     if(local[i]) newCombination.push(local[i])
-            //     if(google[i]) newCombination.push(google[i])
-            //     if(nblog[i]) newCombination.push(nblog[i])
-            //     if(ncafe[i]) newCombination.push(ncafe[i])
-            // }
             this.combination = newCombination
+            this.ready = true
         },
         logComp(link, title){
             let data = new FormData()

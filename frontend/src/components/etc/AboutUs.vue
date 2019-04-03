@@ -71,7 +71,7 @@ export default {
             next: true,
             members: [{name:'강수정', role: ['백엔드/프론트엔드 개발', 'DB(MariaDB, JPA)', '게시판', '회원 관리'], say:'뽑아주세요', email:'luckiness0805@gmail.com', github: 'https://github.com/sue0805', blog: 'https://sue0805.github.io/SueProfile/index.html'}
                     , {name:'권용재', role: ['백엔드 개발', '이것저것', '테스트'], say:'열심히하겠습니다', email: 'rnjs1227@naver.com', github: 'https://github.com/yong1227', blog: null}
-                    , {name:'이양헌', role: ['백엔드 개발', '검색엔진구현', '땡땡떙'], say: '화이팅', email: 'maaseik2292@gmail.com', github: 'https://github.com/WickiesLee', blog: 'https://wickies.tistory.com/'}
+                    , {name:'이양헌', role: ['프론트엔드/백엔드'], say: '화이팅', email: 'maaseik2292@gmail.com', github: 'https://github.com/WickiesLee', blog: 'https://wickies.tistory.com/'}
                     , {name:'최철웅', role: ['프론트엔드 개발', '디자인', '테마', '하드코딩'], say: '더 잘하고 싶다', email: 'endnd28@gmail.com', github: 'https://github.com/ristretto-code', blog: null}],
             mail: '',
         }

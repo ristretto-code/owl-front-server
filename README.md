@@ -8,7 +8,7 @@
   
 ---
 # 화면 정의서
-![portfolio img](https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory&fname=https%3A%2F%2Fk.kakaocdn.net%2Fdn%2FvXsol%2FbtquLpD6oD1%2FhzFYABcb3KPzT7mnvWuDMk%2Fimg.jpg)  
+![portfolio img](https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory&fname=https%3A%2F%2Fk.kakaocdn.net%2Fdn%2FcMZSWB%2FbtquMCiCFAL%2FOludJjP3sKHr3JpthJ0aNK%2Fimg.jpg)  
 ---
 # 완성 한 페이지
 ![portfolio img](https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory&fname=https%3A%2F%2Fk.kakaocdn.net%2Fdn%2FbzCr28%2FbtquM8VTgoM%2FoZeOo2LWqiDYtBWqlkmDa1%2Fimg.jpg)  
